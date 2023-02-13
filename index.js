@@ -53,15 +53,15 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+    fs.writeFile('README.md')
 }
 
 // TODO: Create a function to initialize app
 async function init() {
     return inquirer.prompt(questions)
-    .then((answers) => {
-        console.log(answers);
-        return answers;
+    .then((data) => {
+        console.log(data);
+        return data;
     })
     .catch((error) => {
         console.log(error);
