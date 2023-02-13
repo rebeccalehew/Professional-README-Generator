@@ -27,7 +27,7 @@ const questions = [
     {
         type: 'input',
         name: 'contribution',
-        message: 'How to contribute?',
+        message: 'Directions for future contributors?',
     },
     {
         type: 'input',
@@ -44,6 +44,7 @@ const questions = [
         name: 'license',
         message: 'Which license?',
         choices: ['MIT', 'GPLv3', 'Apache', 'Unlicense'],
+        // Why do you have to return to lowercase?
         filter(val) {
             return val.toLowerCase();
         }
@@ -51,10 +52,21 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+async function init() {
+    return inquirer.prompt(questions)
+    .then((answers) => {
+        console.log(answers);
+        return answers;
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+}
 
 // Function call to initialize app
 init();
