@@ -1,7 +1,9 @@
 // Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js')
+const generateMarkdown = require('./utils/generateMarkdown.js');
+const Markdown = require('./utils/generateMarkdown.js');
+
 
 // App questions for user input
 const questions = [
@@ -45,7 +47,6 @@ const questions = [
         name: 'license',
         message: 'Which license?',
         choices: ['MIT', 'GPLv3', 'Apache'],
-        // Why do you have to return to lowercase?
         filter(val) {
             return val.toLowerCase();
         }
@@ -54,7 +55,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile('README.md', questions, (err) => {
+    fs.writeFileSync('README.md', answers, (err) => {
         if(err){
             console.log('Could not save this file!');
         } else {
@@ -66,13 +67,14 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     return inquirer.prompt(questions)
-    .then((data) => {
-        console.log(data);
-        return data;
+    .then((answers) => {
+        const mark = Markdown.generateMarkdown(answers);
+        console.log(answers);
+        return answers;
     })
     .catch((error) => {
         console.log(error);
-    })
+    });
 };
 
 // Function call to initialize app
