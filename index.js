@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const Markdown = require('./utils/generateMarkdown.js');
 
 
 // App questions for user input
@@ -47,35 +46,30 @@ const questions = [
         name: 'license',
         message: 'Which license?',
         choices: ['MIT', 'GPLv3', 'Apache'],
-        filter(val) {
-            return val.toLowerCase();
-        }
     }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFileSync('README.md', answers, (err) => {
+function writeToFile(data) {
+    const fileName = './test/README.md';
+    fs.writeFile(fileName, data, (err) => {
         if(err){
             console.log('Could not save this file!');
         } else {
-            console.log('Success! New README file created in the current directory!')
+            console.log('Success! New README file created in the current directory!');
         }
     })
 };
 
 // TODO: Create a function to initialize app
-function init() {
-    return inquirer.prompt(questions)
-    .then((answers) => {
-        const mark = Markdown.generateMarkdown(answers);
-        console.log(answers);
-        return answers;
-    })
+function initialize() {
+    inquirer.prompt(questions)
+    .then(answers => writeToFile(generateMarkdown(answers)))
+
     .catch((error) => {
         console.log(error);
-    });
+    })
 };
 
 // Function call to initialize app
-init();
+initialize();

@@ -35,10 +35,8 @@ function renderLicenseSection(license) {
 };
 
 // TODO: Create a function to generate markdown for README
-class Markdown {
-  generateMarkdown(answers) {
+function generateMarkdown(answers) {
     return `
-
 # ${answers.title}
 
 ${this.renderLicenseBadge(answers.license)}
@@ -70,6 +68,6 @@ ${answers.github}
 ## License
 ${this.renderLicenseSection(answers.license)}
 `
-}};
+};
 
-module.exports = Markdown
+module.exports = generateMarkdown;
