@@ -1,5 +1,5 @@
 
-# h
+# Demo
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)  Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
 
@@ -11,19 +11,19 @@
 - [Questions](#questions)
 
 ## Project Description
-h
+Demo for grading purposes
 
 ## Usage
-h
+Demo for grading purposes
 
 ## Installation
-h
+N/A
 
 ## Contribution
-h
+N/A
 
 ## Questions
-- Email: h
-- GitHub: h
+- Email: lehew316@gmail.com
+- GitHub: https://www.github.com/rebeccalehew
 
   
