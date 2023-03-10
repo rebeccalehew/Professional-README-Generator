@@ -1,4 +1,5 @@
 # Professional README Generator
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 ## Description:
@@ -13,7 +14,7 @@ This app allows a user to generate a quality README file using the Inquirer pack
 
 ## Future Contributions:
 - Fork the repo to make personal changes
-- Work out bug - markdown file is not showing up in current directory
+- Add additional license options
 
 
 ## Questions:
@@ -21,13 +22,11 @@ For questions, contact me at:
 - email: lehew316@gmail.com
 - GitHub: www.github.com/rebeccalehew
 - Project GitHub Repository: https://github.com/rebeccalehew/Professional-README-Generator
+- Video Demo: 
 
 
 ## Resources:
 - https://www.youtube.com/@Assistian
 - https://www.npmjs.com/package/inquirer/v/8.2.4
 - https://www.geeksforgeeks.org/node-js-fs-writefile-method/
-
-
-## License:
-MIT license
+- https://www.w3schools.com/js/js_switch.asp

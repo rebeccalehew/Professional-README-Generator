@@ -5,41 +5,53 @@ const fs = require('fs');
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  const badges = {
-    mit: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    gplv3: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    apache: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
-  };
-  return badges[license];
+  
+  console.log(license);
+
+  switch(license) {
+    case 'MIT':
+      return 'README.md', '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)'
+    case 'GPLv3':
+      return 'README.md', '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)'
+    case 'Apache':
+      return 'README.md', '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)'
+    case 'None':
+      return 'README.md', ''
+  }
 };
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  const licenseLink = {
-    mit: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    gplv3: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    apache: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
-  };
-  return licenseLink[license];
+
+  console.log(license);
+
+  switch(license) {
+    case 'MIT':
+      return '[MIT](https://opensource.org/licenses/MIT)'
+    case 'GPLv3':
+      return '[GPLv3](https://www.gnu.org/licenses/gpl-3.0)'
+    case 'Apache':
+      return '[Apache](https://opensource.org/licenses/Apache-2.0)'
+    case 'None':
+      return ''
+  }
 };
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if(license) {
-    return `Licensed under the ${this.renderlicenseLink(license)} license.`
-  } else {
-    return ``
-  }
+
+  return `${renderLicenseBadge(license)}  Licensed under the ${renderLicenseLink(license)} license.`
+
 };
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-    return `
+  return `
 # ${answers.title}
 
-${this.renderLicenseBadge(answers.license)}
+${renderLicenseSection(answers.license)}
 
 ## Table of Contents
 - [Project Description](#Description)
@@ -47,7 +59,6 @@ ${this.renderLicenseBadge(answers.license)}
 - [Contribution](#Contribution)
 - [Installation](#Installation)
 - [Questions](#Questions)
-- [License](#License)
 
 ## Description
 ${answers.description}
@@ -63,11 +74,10 @@ ${answers.contribution}
 
 ## Questions
 ${answers.email}
+
 ${answers.github}
 
-## License
-${this.renderLicenseSection(answers.license)}
-`
+  `
 };
 
 module.exports = generateMarkdown;

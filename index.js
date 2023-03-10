@@ -13,12 +13,12 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'project description',
+        name: 'description',
         message: 'Description of project?',
     },
     {
         type: 'input',
-        name: 'installation instructions',
+        name: 'installation',
         message: 'Installation instructions?',
     },
     {
@@ -45,18 +45,19 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Which license?',
-        choices: ['MIT', 'GPLv3', 'Apache'],
+        choices: ['MIT', 'GPLv3', 'Apache', 'None'],
     }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
     const fileName = './test/README.md';
-    fs.writeFile(fileName, data, (err) => {
+    return fs.writeFile(fileName, data, (err) => {
+        console.log(data);
         if(err){
             console.log('Could not save this file!');
         } else {
-            console.log('Success! New README file created in the current directory!');
+            console.log('Success! New README file created in the test directory!');
         }
     })
 };
