@@ -22,7 +22,7 @@ For questions, contact me at:
 - email: lehew316@gmail.com
 - GitHub: https://www.github.com/rebeccalehew
 - Project GitHub Repository: https://github.com/rebeccalehew/Professional-README-Generator
-- Video Demo: 
+- Video Demo: https://drive.google.com/file/d/16n7ALH27jaZBdsUrQdu26WFIsZ76fwd4/view
 
 
 ## Resources:
