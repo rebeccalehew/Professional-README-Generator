@@ -54,13 +54,13 @@ function generateMarkdown(answers) {
 ${renderLicenseSection(answers.license)}
 
 ## Table of Contents
-- [Project Description](#Description)
-- [Usage](#Usage)
-- [Contribution](#Contribution)
-- [Installation](#Installation)
-- [Questions](#Questions)
+- [Project Description](#description)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [Installation](#installation)
+- [Questions](#questions)
 
-## Description
+## Project Description
 ${answers.description}
 
 ## Usage
@@ -73,9 +73,8 @@ ${answers.installation}
 ${answers.contribution}
 
 ## Questions
-${answers.email}
-
-${answers.github}
+- Email: ${answers.email}
+- GitHub: ${answers.github}
 
   `
 };

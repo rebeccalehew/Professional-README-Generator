@@ -20,7 +20,7 @@ This app allows a user to generate a quality README file using the Inquirer pack
 ## Questions:
 For questions, contact me at:
 - email: lehew316@gmail.com
-- GitHub: www.github.com/rebeccalehew
+- GitHub: https://www.github.com/rebeccalehew
 - Project GitHub Repository: https://github.com/rebeccalehew/Professional-README-Generator
 - Video Demo: 
 
